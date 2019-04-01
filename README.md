@@ -1,4 +1,5 @@
 ### Contents
 
 
-[My cheatsheets collection](cheatsheets.md)
+* [My cheatsheets collection](cheatsheets.md)
+* [Extra dependencies & libraries](libraries.md)
