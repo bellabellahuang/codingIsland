@@ -9,3 +9,5 @@
 ### Scripts
 
 * [datetime](datetime.md)
+* [json](./scripts/json-examples.py)
+* [string](string.py)
