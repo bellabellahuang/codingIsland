@@ -10,4 +10,4 @@
 
 * [datetime](datetime.md)
 * [json](./scripts/json-examples.py)
-* [string](string.py)
+* [string](./scripts/string-examples.py)
