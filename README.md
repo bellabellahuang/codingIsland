@@ -4,6 +4,7 @@
 * [My cheatsheets collection](cheatsheets.md)
 * [Extra dependencies & libraries](libraries.md)
 * [GIT](git.md)
+* [SSH](ssh.md)
 
 
 ### Scripts
