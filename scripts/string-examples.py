@@ -21,3 +21,13 @@ example = """
 """
 
 print(example.format(table="students", id="123"))
+
+
+# -----------------------------
+# converting http payload string to key-value dictionary
+def convertParamsToDict(req_string):
+    req_dict = {}
+    for val in req_string.split('&'):
+        k, v = val.split('=')
+        req_dict[k] = v
+    return req_dict
