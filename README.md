@@ -7,6 +7,7 @@
 * [GIT](git.md)
 * [SSH](ssh.md)
 * [AWS](aws.md)
+* [Sublime](sublime.md)
 
 ### Scripts
 
