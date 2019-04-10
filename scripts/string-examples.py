@@ -31,3 +31,16 @@ def convertParamsToDict(req_string):
         k, v = val.split('=')
         req_dict[k] = v
     return req_dict
+
+
+# -----------------------------
+# convert string to or from binary
+string_example = "hello world"
+binary_result = string_example.encode('utf-8')
+string_result = binary_result.decode('utf-8')
+
+# -----------------------------
+# convert string to or from base64 string
+import base64
+base64_result = base64.b64encode(string_example.encode('utf-8'))
+string_result = base64.b64decode(base64_result).decode('utf-8')
