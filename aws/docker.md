@@ -11,7 +11,7 @@ in the project working directory
 >
 > $ pip install -r requirements.txt -t .vendor
 >
-> $ exit // quit bash
+> $ exit        // quit bash
 
 in the serverless.yml
 
