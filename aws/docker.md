@@ -12,9 +12,11 @@ in the project working directory
 > $ pip install -r requirements.txt -t .vendor
 
 in the serverless.yml
-> package:
->  include:
->    - .vendor/**
+> package
+>
+>   include:
+>
+>       - .vendor/**
 
 in handler.py
 > import sys
