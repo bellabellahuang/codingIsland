@@ -12,13 +12,13 @@ in the project working directory
 > $ pip install -r requirements.txt -t .vendor
 
 in the serverless.yml
->       
+
     package
       include:
         - .vendor/**
 
 in handler.py
->       
+      
     import sys
     sys.path.insert(0, './.vendor')
     import snowflake.connector
