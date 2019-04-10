@@ -2,19 +2,25 @@
 
 in the project working directory
 > $ mkdir .vendor
+>
 > $ docker run -v "$PWD":/var/task -it lambci/lambda:build-python3.6 bash
+>
 > $ pip install snowflake-connector-python
+>
 > $ pip freeze > requirements.txt
+>
 > $ pip install -r requirements.txt -t .vendor
 
 in the serverless.yml
 > package:
-    include:
-        - .vendor/**
+>  include:
+>    - .vendor/**
 
 in handler.py
 > import sys
+>
 > sys.path.insert(0, './.vendor')
+>
 > import snowflake.connector
 
 
