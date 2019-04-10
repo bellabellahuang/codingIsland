@@ -3,6 +3,7 @@
 
 * [My cheatsheets collection](cheatsheets.md)
 * [Extra dependencies & libraries](libraries.md)
+* [Tool collection](tools.md)
 * [GIT](git.md)
 * [SSH](ssh.md)
 * [AWS](aws.md)
