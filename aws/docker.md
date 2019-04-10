@@ -10,6 +10,8 @@ in the project working directory
 > $ pip freeze > requirements.txt
 >
 > $ pip install -r requirements.txt -t .vendor
+>
+> $ exit // quit bash
 
 in the serverless.yml
 
