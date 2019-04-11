@@ -26,3 +26,7 @@
 
         reservedConcurrency  (in functions)
 
+* [configure cloudwatch schedule events for Lambda functions](https://serverless.com/framework/docs/providers/aws/events/schedule/)
+
+        schedule: rate(10 minutes)
+
