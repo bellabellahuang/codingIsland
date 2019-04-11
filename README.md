@@ -17,3 +17,4 @@
 * [string](./scripts/string-examples.py)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
+* [Keyword arguments](./scripts/keyword-arguments.py)
