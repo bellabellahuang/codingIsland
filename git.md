@@ -13,6 +13,16 @@
 
         git reset HEAD~
 
+* Work with branches
+
+        git branch
+        git branch -a (use '-a' to display both local and remote branches)
+        git branch <branch name> (create new branch and stay in the current branch)
+        git checkout -b <branch name> (create new branch and switch to it)
+        git checkout <branch name> (switch to the specific branch)
+        git checkout - (switch to the previous branch)
+        git checkout -b <local branch name> origin/<remote branch name> (grab the remote branch to local repo)
+
 * Change the default editor to nano
 
         git config --global core.editor "nano"
