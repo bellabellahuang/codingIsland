@@ -23,6 +23,10 @@
         git checkout - (switch to the previous branch)
         git checkout -b <local branch name> origin/<remote branch name> (grab the remote branch to local repo)
 
+* Go back to the previous commit state
+
+        git reset --hard <hard value from git log>
+
 * Change the default editor to nano
 
         git config --global core.editor "nano"
