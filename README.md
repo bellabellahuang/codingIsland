@@ -15,6 +15,7 @@
 * [datetime](datetime.md)
 * [json](./scripts/json-examples.py)
 * [string](./scripts/string-examples.py)
+* [list](./scripts/list-examples.py)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
 * [Keyword arguments](./scripts/keyword-arguments.py)
