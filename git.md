@@ -17,11 +17,14 @@
 
         git branch
         git branch -a (use '-a' to display both local and remote branches)
+        git branch -d <branch name> (delete branch if it is already merged)
+        git branch -D <branch name> (force to delete the branch)
         git branch <branch name> (create new branch and stay in the current branch)
         git checkout -b <branch name> (create new branch and switch to it)
         git checkout <branch name> (switch to the specific branch)
         git checkout - (switch to the previous branch)
         git checkout -b <local branch name> origin/<remote branch name> (grab the remote branch to local repo)
+        git push <remote name> :<branch name> (delete remote branch)
 
 * Go back to the previous commit state
 
