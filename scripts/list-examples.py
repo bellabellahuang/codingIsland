@@ -57,3 +57,13 @@ print(numbers)
 numbers = [n for n in range(10)]
 print(list(filter(lambda x: x % 2 == 0, numbers)))
 # output: [0, 2, 4, 6, 8]
+
+
+# concatenating two lists
+a = [n for n in range(5)]
+b = [n for n in range(5, 10)]
+# can be assigned to a third variable
+print(a + b)
+# cannot be assigned to a third variable
+print(a.extend(b))
+print(a)
