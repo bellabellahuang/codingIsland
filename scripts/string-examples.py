@@ -24,6 +24,15 @@ print(example.format(table="students", id="123"))
 
 
 # -----------------------------
+# string formatting with dictionary
+kwargs = {
+    "table": "teachers",
+    "id": "000"
+}
+print(example.format(**kwargs))
+
+
+# -----------------------------
 # converting http payload string to key-value dictionary
 def convertParamsToDict(req_string):
     req_dict = {}
