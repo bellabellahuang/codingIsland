@@ -1,0 +1,212 @@
+service: name-it-whatever-you-want
+
+# customize values for stages
+custom:
+  # use provider.stage as default if no stage is provided in command
+  deployStage: ${opt:stage, self:provider.stage}
+  deployEnvironment:
+    S3:
+      myBucket:
+        prod: my-bucket
+        dev: dev-my-bucket
+    SQS:
+      myQueue:
+        prod: my-queue
+        dev: dev-my-queue
+    SSM:
+      apiKey:
+        prod: api-key
+        dev: dev-api-key
+    CLOUDWATCH:
+      everydayRule:
+        prod: everyday-rule
+        dev: dev-everyday-rule
+    FIREHOSE:
+      myDataDeliveryStream:
+        prod: my-data-delivery-stream
+        dev: dev-my-data-delivery-stream
+      bucketPrefix: v1
+      maxIntervalInSeconds: 900
+      maxSizeInMBs: 128
+      iamRoleName: Kinesis-Firehose-Bulk-Data-Access
+
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-west-2
+  # set the environment variables
+  environment:
+    MY_BUCKET: ${self:custom.deployEnvironment.S3.myBucket.${self:custom.deployStage}}
+    MY_QUEUE: ${self:custom.deployEnvironment.SQS.myQueue.${self:custom.deployStage}}
+    # reference the variables from ssm parameter store
+    API_KEY: ${ssm:${self:custom.deployEnvironment.SSM.apiKey.${self:custom.deployStage}}~true}
+    CALLBACK_URL:
+      Fn::Join:
+        - ""
+        - - "https://"
+          - Ref: CallbackApi
+          - ".execute-api.${self:provider.region}"
+          - ".amazonaws.com/${self:custom.deployStage}/callback"
+  # use an existing bucket for deployment
+  deploymentBucket: 
+    name: ${self:custom.deployEnvironment.S3.myBucket.${self:custom.deployStage}}
+  # use a customized api gateway for Lambda
+  apiGateway:
+    restApiId: 
+      Ref: CallbackApi
+    restApiRootResourceId:
+      Fn::GetAtt: [CallbackApi, RootResourceId]
+    restApiResources: 
+      notifications: 
+        Ref: CallbackApiResource
+  # set up access permission for resources
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "sqs:ReceiveMessage"
+        - "sqs:DeleteMessage"
+        - "sqs:SendMessage"
+        - "sqs:GetQueueUrl"
+      Resource:
+        - Fn::GetAtt: [MyQueue, Arn]
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+        - "s3:PutObjectAcl"
+        - "s3:GetObject"
+        - "s3:GetObjectAcl"
+        - "s3:ListBucket"
+      Resource:
+        - "arn:aws:s3:::${self:custom.deployEnvironment.S3.myBucket.${self:custom.deployStage}}"
+        - "arn:aws:s3:::${self:custom.deployEnvironment.S3.myBucket.${self:custom.deployStage}}/*"
+    - Effect: "Allow"
+      Action:
+        - "ssm:GetParameter"
+      Resource:
+        - "arn:aws:ssm:*:*:parameter/${self:custom.deployEnvironment.SSM.apiKey.${self:custom.deployStage}}"
+    - Effect: "Allow"
+      Action:
+        - "firehose:PutRecord"
+        - "firehose:PutRecordBatch"
+      Resource:
+        - Fn::GetAtt: [MyDataDeliveryStream, Arn]
+
+
+# define Lambda functions here
+functions:
+  sqsTriggerFunction:
+    handler: handler.sqsTriggerFunction
+    description: this is a function triggered by SQS events
+    events:
+      - sqs: 
+          arn: 
+            Fn::GetAtt: [MyQueue, Arn]
+          # how many messages can a event carry
+          batchSize: 10
+    timeout: 10
+    # how many functions can be triggered in the same time
+    reservedConcurrency: 10
+
+  apiTriggerFunction:
+    handler: handler.apiTriggerFunction
+    description: this is a function triggered by api gateway
+    events:
+      - http:
+          path: callback
+          method: get
+          cors: true
+          request:
+            parameters:
+              querystrings:
+                # https://xxxx/callback?name=xxx&age=xxx
+                name: true
+                age: false
+      - http: 
+          path: callback
+          method: post
+          cors: true
+    # for api gateway trigger function, maximum timeout value is 30
+    timeout: 10
+
+  scheduleTriggerFunction:
+    handler: handler.scheduleTriggerFunction
+    description: this is a function triggered by cloudwatch schedule events
+    events:
+      - schedule:
+          name: ${self:custom.deployEnvironment.CLOUDWATCH.everydayRule.${self:custom.deployStage}}
+          rate: cron(0 0 * ? *)
+          # rate: rate(1 day)
+          enabled: true
+    timeout: 900
+    reservedConcurrency: 10
+
+
+# you can add CloudFormation resource templates here
+resources:
+ Resources:
+  # SQS
+  DeadLetterMyQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ${self:custom.deployEnvironment.SQS.myQueue.${self:custom.deployStage}}_deadletter
+      MessageRetentionPeriod: 1209600
+  SqsSaveChannelToS3:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ${self:custom.deployEnvironment.SQS.channelStorageQueue.${self:custom.deployStage}}
+      VisibilityTimeout: 300
+      RedrivePolicy:
+        deadLetterTargetArn: 
+          Fn::GetAtt: [DeadLetterQueueSaveChannelToS3, Arn]
+        maxReceiveCount: 7
+  # API Gateway
+  CallbackApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Description: callback api
+      Name: ${self:custom.deployStage}-${self:service}
+      FailOnWarnings: true
+  CallbackApiResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: 
+        Fn::GetAtt: [CallbackApi, RootResourceId]
+      PathPart: callback
+      RestApiId: 
+        Ref: CallbackApi
+  # Firehose
+  MyDataDeliveryStream:
+    Type: AWS::KinesisFirehose::DeliveryStream
+    Properties: 
+      DeliveryStreamName: ${self:custom.deployEnvironment.FIREHOSE.myDataDeliveryStream.${self:custom.deployStage}}
+      DeliveryStreamType: DirectPut
+      ExtendedS3DestinationConfiguration:
+        BucketARN: "arn:aws:s3:::${self:custom.deployEnvironment.S3.myBucket.${self:custom.deployStage}}"
+        BufferingHints:
+          IntervalInSeconds: ${self:custom.deployEnvironment.FIREHOSE.maxIntervalInSeconds}
+          SizeInMBs: ${self:custom.deployEnvironment.FIREHOSE.maxSizeInMBs}
+        CompressionFormat: GZIP
+        Prefix: storage/${self:custom.deployEnvironment.FIREHOSE.bucketPrefix}/
+        RoleARN:
+          Fn::Join:
+            - ""
+            - - "arn:aws:iam::"
+              - Ref: "AWS::AccountId"
+              - ":role/${self:custom.deployEnvironment.FIREHOSE.iamRoleName}"
+        CloudWatchLoggingOptions:
+          Enabled: true
+          LogGroupName: "/aws/kinesisfirehose/${self:custom.deployEnvironment.FIREHOSE.myDataDeliveryStream.${self:custom.deployStage}}"
+          LogStreamName: "S3Delivery"
+
+# include or exclude some files/folders to be uploaded to S3 in deployment
+package:
+ exclude:
+   - examples/**
+   - bulk-import/**
+   - README.txt
+   - requirements.txt
+   - README.md
+ include:
+   - .vendor/**
