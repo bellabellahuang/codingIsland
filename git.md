@@ -5,6 +5,10 @@
         git config user.name <your_user_name>
         git config user.email <your_email_address>
 
+* Clone the remote repo to local
+
+        git clone git@github.com:username/repo.git
+
 * Undo local changes
 
         git checkout .
