@@ -53,3 +53,9 @@ string_result = binary_result.decode('utf-8')
 import base64
 base64_result = base64.b64encode(string_example.encode('utf-8'))
 string_result = base64.b64decode(base64_result).decode('utf-8')
+
+# -----------------------------
+# convert dictionary to string with '&' symbol which is commonly used in http urls
+import urllib.parse
+print(urllib.parse.urlencode({'one': 1, 'two': 2}))
+# output: one=1&two=2
