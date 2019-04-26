@@ -20,3 +20,6 @@
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
 * [Keyword arguments](./scripts/keyword-arguments.py)
 * [Substitution cipher](./scripts/substitution-cipher.py)
+
+### Articles
+* [How to write a git commit message](https://chris.beams.io/posts/git-commit/)
