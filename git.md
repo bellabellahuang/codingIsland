@@ -13,6 +13,10 @@
 
         git reset HEAD~
 
+* Undo git add .       
+
+        git reset
+
 * Work with branches
 
         git branch
