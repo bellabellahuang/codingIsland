@@ -23,6 +23,7 @@
 * [Keyword arguments](./scripts/keyword-arguments.py)
 * [Substitution cipher](./scripts/substitution-cipher.py)
 * [Regular expressions](./scripts/regular-expressions.py)
+* [Flatten JSON to CSV using Pandas](./scripts/json-to-csv-panda.py)
 
 ### Articles
 * [How to write a git commit message](https://chris.beams.io/posts/git-commit/)
