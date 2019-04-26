@@ -23,3 +23,9 @@
 
 ### Articles
 * [How to write a git commit message](https://chris.beams.io/posts/git-commit/)
+
+### Study Resources
+* OAuth        
+
+    [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
+    [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)         
