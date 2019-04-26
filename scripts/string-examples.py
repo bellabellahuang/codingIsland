@@ -59,3 +59,8 @@ string_result = base64.b64decode(base64_result).decode('utf-8')
 import urllib.parse
 print(urllib.parse.urlencode({'one': 1, 'two': 2}))
 # output: one=1&two=2
+
+# -----------------------------
+# format the specific characters in urls
+print(urllib.parse.quote('one=1&two=2'))
+# output: one%3D1%26two%3D2
