@@ -1,24 +1,24 @@
-####Snowflake
+##Snowflake      
 
-###CLI Client
+###CLI Client     
 
-###Installation
+###Installation      
 
-        brew cask install snowflake-snowsql
+        brew cask install snowflake-snowsql     
 
-###Configuration
+###Configuration      
 
-        Set default login credentials in ~/.snowsql/config
+        Set default login credentials in ~/.snowsql/config    
 
-###Login
+###Login      
 
-        Snowsql
+        Snowsql     
 
-###SQL Scripts       
+###SQL Scripts           
 
-[DATA IMPORT AND EXPORT](./scripts/snowflake/copy_into.sql)    
-[MERGE TABLES](./scripts/snowflake/merge.sql)
+[DATA IMPORT AND EXPORT](./scripts/snowflake/copy_into.sql)     
+[MERGE TABLES](./scripts/snowflake/merge.sql)       
 
-###Python connector
+###Python connector        
 
-[Connect to snowflake and excute queries](./scripts/snowflake/connector.py)
+[Connect to snowflake and excute queries](./scripts/snowflake/connector.py)       
