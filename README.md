@@ -28,4 +28,10 @@
 * OAuth        
 
     [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
-    [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)         
+    [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)        
+
+### Other References
+* Youtube     
+
+        Link to the channel: https://www.youtube.com/channel/{channel id}
+        Link to the video: https://www.youtube.com/watch?v={video id}
