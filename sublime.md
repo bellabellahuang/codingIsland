@@ -11,3 +11,14 @@
 
 * [Pretty Json](https://packagecontrol.io/packages/Pretty%20JSON)
 * [Markdown Live Preview](https://packagecontrol.io/packages/MarkdownLivePreview)
+
+
+#### Shotcuts
+
+* Run a test on the current opened file
+
+        command + B
+
+* Close the test console
+
+        Click on the console and press esc
