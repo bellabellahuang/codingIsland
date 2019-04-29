@@ -4,6 +4,10 @@ from io import StringIO
 # converting string to dictionary
 json.loads('{"a": 1, "b": 2, "c": 3}')
 
+with open("filename.json", "r") as cfgfile:
+    cfg = json.loads(cfgfile.read())
+    print(cfg)
+
 # converting a file-like object to dictionary
 with open("filename.json", "r") as cfgfile:
     cfg = json.load(cfgfile)
