@@ -1,5 +1,7 @@
 ### Serverless
 
+* [my serverless template](./scripts/sls-template.yml)
+
 * refer to ssm parameters
 
         ${ssm:param-name}
@@ -30,6 +32,3 @@
 
         schedule: rate(10 minutes)
         schedule: cron(*/10 * * * *)
-
-* [my serverless template](./scripts/sls-template.yml)
-
