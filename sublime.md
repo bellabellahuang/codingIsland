@@ -13,6 +13,7 @@
 * [Markdown Live Preview](https://packagecontrol.io/packages/MarkdownLivePreview)
 * Git - git integration
 * GitGutter - shows the changed lines
+* Anaconda - auto completion and pep8 validation
 
 
 #### Shotcuts
