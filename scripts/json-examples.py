@@ -1,7 +1,16 @@
 import json
+from io import StringIO
 
 # converting string to dictionary
 json.loads('{"a": 1, "b": 2, "c": 3}')
+
+# converting a file-like object to dictionary
+with open("filename.json", "r") as cfgfile:
+    cfg = json.load(cfgfile)
+    print(cfg)
+
+io = StringIO('["streaming API"]')
+print(json.load(io))
 
 # converting dictionary to string
 json.dumps({"a": 1, "b": 2, "c": 3}, indent=2)
