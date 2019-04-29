@@ -11,6 +11,8 @@
 
 * [Pretty Json](https://packagecontrol.io/packages/Pretty%20JSON)
 * [Markdown Live Preview](https://packagecontrol.io/packages/MarkdownLivePreview)
+* Git - git integration
+* GitGutter - shows the changed lines
 
 
 #### Shotcuts
