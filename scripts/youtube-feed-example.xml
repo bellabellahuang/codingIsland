@@ -1,0 +1,43 @@
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015"
+         xmlns="http://www.w3.org/2005/Atom">
+  <link rel="hub" href="https://pubsubhubbub.appspot.com"/>
+  <link rel="self" href="https://www.youtube.com/xml/feeds/videos.xml?channel_id=CHANNEL_ID"/>
+  <title>YouTube video feed</title>
+  <updated>2015-04-01T19:05:24.552394234+00:00</updated>
+  <entry>
+    <id>yt:video:123</id>
+    <yt:videoId>123</yt:videoId>
+    <yt:channelId>c123</yt:channelId>
+    <title>Video 123</title>
+    <link rel="alternate" href="http://www.youtube.com/watch?v=123"/>
+    <author>
+     <name>Channel c123</name>
+     <uri>http://www.youtube.com/channel/c123</uri>
+    </author>
+    <published>2015-03-06T21:40:57+00:00</published>
+    <updated>2015-03-09T19:05:24.552394234+00:00</updated>
+  </entry>
+  <entry>
+    <id>yt:video:666</id>
+    <yt:videoId>666</yt:videoId>
+    <yt:channelId>c666</yt:channelId>
+    <title>Video 666</title>
+    <link rel="alternate" href="http://www.youtube.com/watch?v=666"/>
+    <author>
+     <name>Channel c666</name>
+     <uri>http://www.youtube.com/channel/c666</uri>
+    </author>
+    <published>2015-03-06T21:40:57+00:00</published>
+    <updated>2015-03-09T19:05:24.552394234+00:00</updated>
+  </entry>
+</feed>
+<!-- <?xml version=\'1.0\' encoding=\'UTF-8\'?> -->
+<!-- <feed xmlns:at="http://purl.org/atompub/tombstones/1.0" xmlns="http://www.w3.org/2005/Atom">
+  <at:deleted-entry ref="yt:video:c6wwjiJ27IE" when="2019-01-07T22:30:19+00:00">
+    <link href="https://www.youtube.com/watch?v=c6wwjiJ27IE"/>
+    <at:by>
+      <name>Bella Huang</name>
+      <uri>https://www.youtube.com/channel/UCjI-61cPFPY6ta_5f4mBSfw</uri>
+    </at:by>
+  </at:deleted-entry>
+</feed> -->
