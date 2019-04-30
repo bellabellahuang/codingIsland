@@ -75,6 +75,6 @@
 * Fixing merge conflicts in different branches         
 
         - in the current branch pull the updates from the updated branch (updates in this branch have been merged into master)       
-        `git pull origin <updated branch>`
+        - git pull origin <updated branch>
         - fix the conflicts locally, commit it and push it to the remote current branch      
         - create a new pr from the current branch to master     
