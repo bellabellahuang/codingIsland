@@ -21,3 +21,12 @@ ns = getNamespaces()
 # loop through the xml object to get the values
 for entry in root.findall("atom:entry", namespaces=ns):
     print(entry.findtext("yt:videoId", namespaces=ns))
+
+# events can be a list of elements in 'start', 'end', 'start-ns', 'end-ns'
+# 'start' and 'end' will return the start tag or end tag with the namespaces
+# <feed> is the start tag and </feed> is the end tag
+# 'ns' will return the unique namespaces without the tag name
+# iterparse will loop through each node of the element tree
+a = ET.iterparse("youtube-feed-example.xml", events=['start'])
+for e in a:
+    print(e)
