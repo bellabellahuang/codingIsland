@@ -14,6 +14,10 @@
 
         aws s3 ls --summarize --human-readable --recursive s3://bucket-name/
 
+* List all the objects under a path in s3
+
+        aws s3 ls s3://{path} --recursive --human-readable
+
 * Add a parameter to SSM
 
         aws ssm put-parameter --name "parameter_name" --value "parameter value" --type String/SecureString
