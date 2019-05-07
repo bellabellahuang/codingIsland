@@ -78,3 +78,12 @@
         - git pull origin <updated branch>
         - fix the conflicts locally, commit it and push it to the remote current branch      
         - create a new pr from the current branch to master     
+
+* Keeping a downstream git repo current with upstream repo changes       
+
+        - upstream merged some changes by PRs        
+        - in local repo, checkout to the branch that you want to keep updated with the upstream      
+        - use the master branch at this example: git checkout master       
+        - fetch the new updates from upstream: git fetch upstream
+        - merge with the branch you want: git merge upstream/<branch>    
+        - push the updates to your own repo: git push origin master            
