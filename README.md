@@ -28,6 +28,7 @@
 
 ### Articles
 * [How to write a git commit message](https://chris.beams.io/posts/git-commit/)
+* [Python with Context Managers](https://jeffknupp.com/blog/2016/03/07/python-with-context-managers/)
 
 ### Study Resources
 * OAuth        
