@@ -18,7 +18,7 @@
 * [json](./scripts/json-examples.py)
 * [XML](./scripts/xml-examples.py)
 * [string](./scripts/string-examples.ipynb)
-* [list](./scripts/list-examples.py)
+* [list](./scripts/list-examples.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
 * [Keyword arguments](./scripts/keyword-arguments.py)
