@@ -1,4 +1,4 @@
 ### Datetime scripts
 
-* [datetime convertion](./scripts/datetime/datetimeConvertion.py)
-* [operation on date](./scripts/datetime/dateOperation.py)
+* [datetime convertion](./scripts/datetime/datetimeConvertion.ipynb)
+* [operation on date](./scripts/datetime/dateOperation.ipynb)
