@@ -6,14 +6,14 @@ from io import StringIO
 # converting string to dictionary
 json.loads('{"a": 1, "b": 2, "c": 3}')
 
-with open("filename.json", "r") as cfgfile:
+with open("example.json", "r") as cfgfile:
     cfg = json.loads(cfgfile.read())
     print(cfg)
 
 # --------------------------------
 # json.load
 # converting a file-like object to dictionary
-with open("filename.json", "r") as cfgfile:
+with open("example.json", "r") as cfgfile:
     cfg = json.load(cfgfile)
     print(cfg)
 
@@ -29,7 +29,7 @@ json.dumps({"a": 1, "b": 2, "c": 3}, indent=2)
 # json.dump
 # converting json objects into a file-like writable object
 example = {"json": "test"}
-with open("filename.json", "w") as f:
+with open("example.json", "w") as f:
     json.dump(example, f)
 
 # --------------------------------

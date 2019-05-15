@@ -15,7 +15,7 @@
 ### Scripts
 
 * [datetime](datetime.md)
-* [json](./scripts/json-examples.py)
+* [json](./scripts/json-examples.ipynb)
 * [XML](./scripts/xml-examples.py)
 * [string](./scripts/string-examples.ipynb)
 * [list](./scripts/list-examples.ipynb)
