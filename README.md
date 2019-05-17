@@ -20,7 +20,7 @@
 * [string](./scripts/string-examples.ipynb)
 * [list](./scripts/list-examples.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
-* [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
+* [Calling functions in dictionary](./scripts/functions-in-dictionary.ipynb)
 * [Keyword arguments](./scripts/keyword-arguments.ipynb)
 * [Substitution cipher](./scripts/substitution-cipher.py)
 * [Regular expressions](./scripts/regular-expressions.py)
