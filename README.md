@@ -22,7 +22,7 @@
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.ipynb)
 * [Keyword arguments](./scripts/keyword-arguments.ipynb)
-* [Substitution cipher](./scripts/substitution-cipher.py)
+* [Substitution cipher](./scripts/substitution-cipher.ipynb)
 * [Regular expressions](./scripts/regular-expressions.ipynb)
 * [Flatten JSON to CSV using Pandas](./scripts/json-to-csv-pandas.ipynb)
 
