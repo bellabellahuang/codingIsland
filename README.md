@@ -21,7 +21,7 @@
 * [list](./scripts/list-examples.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.py)
-* [Keyword arguments](./scripts/keyword-arguments.py)
+* [Keyword arguments](./scripts/keyword-arguments.ipynb)
 * [Substitution cipher](./scripts/substitution-cipher.py)
 * [Regular expressions](./scripts/regular-expressions.py)
 * [Flatten JSON to CSV using Pandas](./scripts/json-to-csv-panda.py)
