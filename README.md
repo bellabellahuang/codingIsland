@@ -16,7 +16,7 @@
 
 * [datetime](datetime.md)
 * [json](./scripts/json-examples.ipynb)
-* [XML](./scripts/xml-examples.py)
+* [XML](./scripts/xml-examples.ipynb)
 * [string](./scripts/string-examples.ipynb)
 * [list](./scripts/list-examples.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
