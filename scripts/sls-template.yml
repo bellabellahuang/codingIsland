@@ -152,7 +152,7 @@ resources:
     Properties:
       QueueName: ${self:custom.deployEnvironment.SQS.myQueue.${self:custom.deployStage}}_deadletter
       MessageRetentionPeriod: 1209600
-  SqsSaveChannelToS3:
+  MyQueue:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: ${self:custom.deployEnvironment.SQS.channelStorageQueue.${self:custom.deployStage}}
@@ -161,6 +161,55 @@ resources:
         deadLetterTargetArn: 
           Fn::GetAtt: [DeadLetterQueueSaveChannelToS3, Arn]
         maxReceiveCount: 7
+
+  # SQS Policy
+  MyQueuePolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      PolicyDocument: {
+        # version of the policy language
+        "Version": "2012-10-17",
+        "Id": "My_Queue_Policy",
+        "Statement": [
+          {
+            "Sid": "Send_Receive_Message",
+            "Effect": "Allow",
+            "Principal": {
+              # all aws users
+              "AWS": "*"
+            },
+            "Action": [
+              "sqs:SendMessage",
+              "sqs:ReceiveMessage"
+            ],
+            "Resource": {"Fn::GetAtt": ["MyQueue", "Arn"]},
+            "Condition": {
+              "ArnLike": {
+                "aws:SourceArn": {"Fn::GetAtt": ["MyBucket", "Arn"]}
+              }
+            }
+          }
+        ]
+      }
+      Queues:
+        - Ref: MyQueue
+  # S3 Bucket
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: MyBucket
+      AccessControl: BucketOwnerFullControl
+      NotificationConfiguration:
+        QueueConfigurations:
+          - Event: 's3:ObjectCreated:*'
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: notifications/updates/
+            Queue:
+              Fn::GetAtt: [MyQueue, Arn]
+
   # API Gateway
   CallbackApi:
     Type: AWS::ApiGateway::RestApi
