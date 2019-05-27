@@ -209,6 +209,36 @@ resources:
                     Value: notifications/updates/
             Queue:
               Fn::GetAtt: [MyQueue, Arn]
+        LambdaConfigurations:
+          - Event: 's3:ObjectCreated:*'
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: notifications/deletion/
+            Function:
+              Fn::Join:
+                - ""
+                - - "arn:aws:lambda:${self:provider.region}:"
+                  - Ref: "AWS::AccountId"
+                  - ":function:${self:service}-${self:custom.deployStage}-"
+                  - "MyFunction"
+
+  # Lambda Permission
+  MyFunctionInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName:
+        Fn::Join:
+          - ""
+          - - "arn:aws:lambda:${self:provider.region}:"
+            - Ref: "AWS::AccountId"
+            - ":function:${self:service}-${self:custom.deployStage}-"
+            - "MyFunction"
+      Action: 'lambda:InvokeFunction'
+      Principal: s3.amazonaws.com
+      SourceArn:
+        Fn::GetAtt: [MyBucket, Arn]
 
   # API Gateway
   CallbackApi:
