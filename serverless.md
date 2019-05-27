@@ -2,6 +2,8 @@
 
 * [my serverless template](./scripts/sls-template.yml)
 
+* [enable s3 event notifications in serverless](https://aws.amazon.com/premiumsupport/knowledge-center/unable-validate-destination-s3/)
+
 * refer to ssm parameters
 
         ${ssm:param-name}
