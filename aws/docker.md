@@ -1,5 +1,10 @@
 ### Installing dependecies in AWS environment
 
+untrack the vendor folder
+
+        nano .gitigore
+        add ".vendor/"
+
 in the project working directory
 > $ mkdir .vendor
 >
