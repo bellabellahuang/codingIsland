@@ -31,6 +31,7 @@
 * [Python with Context Managers](https://jeffknupp.com/blog/2016/03/07/python-with-context-managers/)
 * [A Gentle Introduction to Context Managers: The Pythonic Way of Managing Resources](https://alysivji.github.io/managing-resources-with-context-managers-pythonic.html)
 * [Thinking Recursively in Python](https://realpython.com/python-thinking-recursively/)
+* [Pointers in Python](https://realpython.com/pointers-in-python/)
 
 ### Study Resources
 * OAuth        
