@@ -34,6 +34,11 @@
         git checkout -b <local branch name> origin/<remote branch name> (grab the remote branch to local repo)
         git push <remote name> :<branch name> (delete remote branch)
 
+* Checkout to a remote branch
+
+        git fetch
+        git checkout -t origin/<branch name>
+
 * Go back to the previous commit state
 
         git reset --hard <hard value from git log>
