@@ -1,0 +1,46 @@
+{
+  "button": {
+    "type": "button",
+    "text": {
+      "type": "plain_text",
+      "text": "Finance Report"
+    },
+    "action_id": "finance_report",
+    "value": "finance_report",
+    "style": "primary"
+  },
+  "menu": [
+    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "Hi, how can I help you?"
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        "button1",
+        "button2",
+        "button3"
+      ]
+    }
+  ],
+  "textElement": {
+    "label": "Name",
+    "name": "customer_name",
+    "type": "text",
+    "placeholder": "Justin"
+  },
+  "dialog": {
+    "callback_id": "finance_report",
+    "title": "Finance Report",
+    "submit_label": "Submit",
+    "state": "finance",
+    "notify_on_cancel": true,
+    "elements": [
+      "textElement1",
+      "textElement2"
+    ]
+  }
+}
