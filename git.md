@@ -72,6 +72,15 @@
         git push origin v1.4
         git push origin --tags (push all tags)
 
+* Creating tags to upstream
+
+        create a pr to merge other branches into master in upstream
+        in local origin repo
+        git checkout master
+        git pull upstream/master
+        git tag -a 1.0.0
+        git push upstream --tags
+
 * Deleting tags
 
         git tag -d v1.4 (locally)
