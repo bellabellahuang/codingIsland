@@ -1,6 +1,6 @@
 ### AWS
 
-* [install dependencies using lamda docker image](./aws/docker.md)
+* [install dependencies using lamda docker image](../aws/docker.md)
 
 * Install aws-cli
 

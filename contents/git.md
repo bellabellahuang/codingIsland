@@ -77,7 +77,7 @@
         create a pr to merge other branches into master in upstream
         in local origin repo
         git checkout master
-        git pull upstream/master
+        git pull upstream master
         git tag -a 1.0.0
         git push upstream --tags
 

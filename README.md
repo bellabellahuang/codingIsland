@@ -1,20 +1,20 @@
 ### Contents
 
 
-* [My cheatsheets collection](cheatsheets.md)
-* [Extra dependencies & libraries](libraries.md)
-* [Tool collection](tools.md)
-* [GIT](git.md)
-* [SSH](ssh.md)
-* [AWS](aws.md)
-* [Serverless](serverless.md)
-* [Sublime](sublime.md)
-* [Snowflake](snowflake.md)
+* [My cheatsheets collection](./contents/cheatsheets.md)
+* [Extra dependencies & libraries](./contents/libraries.md)
+* [Tool collection](./contents/tools.md)
+* [GIT](./contents/git.md)
+* [SSH](./contents/ssh.md)
+* [AWS](./contents/aws.md)
+* [Serverless](./contents/serverless.md)
+* [Sublime](./contents/sublime.md)
+* [Snowflake](./contents/snowflake.md)
 * [Public apis](https://public-apis.xyz)
 
 ### Scripts
 
-* [datetime](datetime.md)
+* [datetime](./contents/datetime.md)
 * [json](./scripts/json-examples.ipynb)
 * [XML](./scripts/xml-examples.ipynb)
 * [string](./scripts/string-examples.ipynb)
@@ -47,7 +47,7 @@
 * [Data Warehose](https://www.datawarehouse4u.info)
 
 ### Other References
-* [Youtube](youtube.md)    
+* [Youtube](./contents/youtube.md)    
 * [rot13 encoding](https://stackoverflow.com/questions/5855758/what-is-the-source-code-of-the-this-module-doing?__s=obmqcfzzswehjvvd6upc) 
 
 
