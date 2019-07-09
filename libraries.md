@@ -7,3 +7,5 @@
 * [Wand](http://docs.wand-py.org/en/0.5.2/)
 
     ImagedMagick binding library for Python
+
+* [ImageMagick](https://wiki.python.org/moin/ImageMagick)
