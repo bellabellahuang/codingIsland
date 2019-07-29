@@ -32,6 +32,7 @@
 * [A Gentle Introduction to Context Managers: The Pythonic Way of Managing Resources](https://alysivji.github.io/managing-resources-with-context-managers-pythonic.html)
 * [Thinking Recursively in Python](https://realpython.com/python-thinking-recursively/)
 * [Pointers in Python](https://realpython.com/pointers-in-python/)
+* [Multipage PDF to JPEG Image Conversion in Python](https://mtyurt.net/post/2019/multipage-pdf-to-jpeg-image-in-python.html#)
 
 ### Study Resources
 * OAuth        
