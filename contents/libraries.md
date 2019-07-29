@@ -9,3 +9,6 @@
     ImagedMagick binding library for Python
 
 * [ImageMagick](https://wiki.python.org/moin/ImageMagick)
+
+* [tempfile](https://docs.python.org/3/library/tempfile.html)
+
