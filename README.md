@@ -45,6 +45,7 @@
 ### Blogs & Websites
 * [Siv Scripts](https://alysivji.github.io)
 * [Data Warehose](https://www.datawarehouse4u.info)
+* [M. Tarik Yurt](https://mtyurt.net)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
