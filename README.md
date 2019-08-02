@@ -33,12 +33,12 @@
 * [Thinking Recursively in Python](https://realpython.com/python-thinking-recursively/)
 * [Pointers in Python](https://realpython.com/pointers-in-python/)
 * [Multipage PDF to JPEG Image Conversion in Python](https://mtyurt.net/post/2019/multipage-pdf-to-jpeg-image-in-python.html#)
+* [Understanding CloudFormation Updates: Replacement, Resource Policies, and Stack Policies](https://www.alexdebrie.com/posts/understanding-cloudformation-updates/)
 
 ### Study Resources
 * OAuth        
-
-    - [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
-    - [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)  
+    * [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
+    * [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)  
 * Unicode and character sets
 
     [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)    
