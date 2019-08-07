@@ -34,6 +34,7 @@
 * [Pointers in Python](https://realpython.com/pointers-in-python/)
 * [Multipage PDF to JPEG Image Conversion in Python](https://mtyurt.net/post/2019/multipage-pdf-to-jpeg-image-in-python.html#)
 * [Understanding CloudFormation Updates: Replacement, Resource Policies, and Stack Policies](https://www.alexdebrie.com/posts/understanding-cloudformation-updates/)
+* [Integrate API Gateway with Kinesis Firehose using CloudFormation](https://apimeister.com/2017/08/24/integrate-api-gateway-with-kinesis-firehose-using-cloudformation.html)
 
 ### Study Resources
 * OAuth        
@@ -47,6 +48,7 @@
 * [Siv Scripts](https://alysivji.github.io)
 * [Data Warehose](https://www.datawarehouse4u.info)
 * [M. Tarik Yurt](https://mtyurt.net)
+* [apimeister blog](https://apimeister.com)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
