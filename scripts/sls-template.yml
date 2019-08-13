@@ -61,7 +61,7 @@ provider:
     restApiResources: 
       notifications: 
         Ref: CallbackApiResource
-  # set up access permission for resources
+  # set up default access permission for lambda functions
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -98,6 +98,8 @@ provider:
 functions:
   sqsTriggerFunction:
     handler: handler.sqsTriggerFunction
+    tags:
+      environment: test
     description: this is a function triggered by SQS events
     events:
       - sqs: 
@@ -255,6 +257,236 @@ resources:
       PathPart: callback
       RestApiId: 
         Ref: CallbackApi
+
+  # PUT method for firehose PutRecord endpoint
+  FirehoseApiMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      ApiKeyRequired: false
+      AuthorizationScopes:
+        - aws.cognito.signin.user.admin
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: RestApiAuthorizer
+      HttpMethod: PUT
+      Integration:
+        # IAM Role
+        Credentials:
+          Fn::GetAtt: [GatewayRole, Arn]
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseTemplates:
+              application/json: '{"status":"OK"}'
+          - StatusCode: 400
+            SelectionPattern: 4\d{2}
+          - StatusCode: 500
+            SelectionPattern: 5\d{2}
+        RequestParameters:
+          integration.request.header.Content-Type: "'application/x-amz-json-1.1'"
+        RequestTemplates:
+          application/json:
+            Fn::Join:
+              - ""
+              - - "#set($data = \"$input.json('$.Data')\n\")\n"
+                - "{\"DeliveryStreamName\": \""
+                - ${self:custom.deployEnvironment.FIREHOSE.MyDeliveryStream.${self:custom.deployStage}}
+                - "\", \"Record\": {\"Data\": \"$util.base64Encode($data)\"}}"
+        Type: AWS
+        # firehose PutRecord endpoint
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:aws:apigateway:"
+              - Ref: AWS::Region
+              - ":firehose:action/PutRecord"
+      MethodResponses:
+        - StatusCode: 200
+        - StatusCode: 400
+        - StatusCode: 500
+      ResourceId:
+        Ref: CallbackApiResource
+      RestApiId:
+        Ref: CallbackApi
+
+  # GET method for S3 GetObject endpoint
+  S3GetObjectApiMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      ApiKeyRequired: false
+      AuthorizationScopes:
+        - aws.cognito.signin.user.admin
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: RestApiAuthorizer
+      HttpMethod: GET
+      Integration:
+        # IAM Role
+        Credentials:
+          Fn::GetAtt: [GatewayRole, Arn]
+        IntegrationHttpMethod: GET
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Timestamp: integration.response.header.Date
+              method.response.header.Content-Length: integration.response.header.Content-Length
+              method.response.header.Content-Type: integration.response.header.Content-Type
+          - StatusCode: 400
+            SelectionPattern: 4\d{2}
+          - StatusCode: 500
+            SelectionPattern: 5\d{2}
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:aws:apigateway:"
+              - Ref: AWS::Region
+              - ":s3:path/"
+              - "${self:custom.deployEnvironment.S3.MyBucket.${self:custom.deployStage}}"
+              - "/config/config.json"
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: Empty
+          ResponseParameters:
+            method.response.header.Timestamp: false
+            method.response.header.Content-Length: false
+            method.response.header.Content-Type: true
+        - StatusCode: 400
+        - StatusCode: 500
+      ResourceId:
+        Ref: CallbackApiResource
+      RestApiId:
+        Ref: CallbackApi
+
+  # Authorizer
+  RestApiAuthorizer:
+    Type: AWS::ApiGateway::Authorizer
+    Properties:
+      AuthorizerCredentials:
+        Fn::GetAtt: [GatewayRole, Arn]
+      IdentitySource: method.request.header.Authorization
+      Name: ${self:custom.deployStage}-RestApiAuthorizer
+      ProviderARNs:
+        - Fn::GetAtt: [MyUserPool, Arn]
+      RestApiId:
+        Ref: CallbackApi
+      Type: COGNITO_USER_POOLS
+
+
+  # cognito config
+  # !!!!!!
+  # danger fields to update as they will replace the existing user pool:
+  # Schema, UsernameAttributes, UserPoolName
+  # !!!!!!
+  MyUserPool:
+    Type: AWS::Cognito::UserPool
+    UpdateReplacePolicy: Retain
+    Properties: 
+      AdminCreateUserConfig: 
+        AllowAdminCreateUserOnly: true
+      MfaConfiguration: OFF
+      UserPoolName: ${self:custom.deployEnvironment.cognito.userPool.${self:custom.deployStage}}
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 6
+          RequireLowercase: false
+          RequireNumbers: false
+          RequireSymbols: false
+          RequireUppercase: false
+          TemporaryPasswordValidityDays: 7
+      UserPoolTags:
+        environment: test
+  MagpieUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    UpdateReplacePolicy: Retain
+    Properties: 
+      ClientName: ${self:custom.deployEnvironment.cognito.userPool.${self:custom.deployStage}}-client
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - USER_PASSWORD_AUTH
+      UserPoolId:
+        Ref: MyUserPool
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthScopes:
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlows:
+        - code
+      CallbackURLs:
+        - https://example.com
+
+ # IAM Role for api gateway to integrate firehose
+  GatewayRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - apigateway.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: ${self:custom.deployStage}-GatewayRolePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - firehose:PutRecord
+                Resource:
+                  - Fn::GetAtt: [MyDataDeliveryStream, Arn]
+              - Effect: Allow
+                Action:
+                  - apigateway:POST
+                  - apigateway:PATCH
+                Resource: arn:aws:apigateway:*::/restapis/*/authorizers
+                Condition:
+                  ArnLike:
+                    apigateway:CognitoUserPoolProviderArn:
+                      - Fn::GetAtt: [MyUserPool, Arn]
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:ListBucket
+                Resource:
+                  - "arn:aws:s3:::${self:custom.deployEnvironment.S3.MyBucket.${self:custom.deployStage}}"
+                  - "arn:aws:s3:::${self:custom.deployEnvironment.S3.MyBucket.${self:custom.deployStage}}/*"
+
+  # IAM role for FIREHOSE ASSUME
+  FirehoseRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - firehose.amazonaws.com
+            Action:
+              - sts:AssumeRole
+            Condition:
+              StringEquals:
+                sts:ExternalId:
+                  Ref: AWS::AccountId
+      Path: "/"
+      Policies:
+        - PolicyName: ${self:custom.deployStage}-FirehoseRolePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:PutObjectAcl
+                Resource:
+                  - "arn:aws:s3:::${self:custom.deployEnvironment.S3.MyBucket.${self:custom.deployStage}}"
+                  - "arn:aws:s3:::${self:custom.deployEnvironment.S3.MyBucket.${self:custom.deployStage}}/*"
+
   # Firehose
   MyDataDeliveryStream:
     Type: AWS::KinesisFirehose::DeliveryStream
