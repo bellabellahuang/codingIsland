@@ -67,6 +67,10 @@
 
         git tag
 
+* Listing details of a tag
+
+        git show [tag name]
+
 * Sharing tags
 
         git push origin v1.4
