@@ -61,6 +61,10 @@
 
         docker run --rm -it --network=host mysql mysql -h 127.0.0.1 -uroot -p
 
+* Bind mount a volume from local storage with container storage
+
+        docker run -v [local-path]:[container-path]
+
 * Pull an image from Docker Hub
 
         docker pull [image-name]
