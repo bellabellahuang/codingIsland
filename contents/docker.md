@@ -5,6 +5,10 @@
         Go to the directory of the Dockerfile
         docker build -t [image-name] .
 
+* Build docker image with tags
+
+        docker build -t [image-name]:[tag] .
+
 * Push an image to Docker Hub
 
         docker push [image-name]
