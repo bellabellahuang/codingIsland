@@ -74,3 +74,8 @@
         In the Dockerfile
         FROM debian
         RUN apt-get update && apt-get install -y default-mysql-client && rm -rf /var/lib/apt
+
+* Run script(s) using image
+
+        ENTRYPOINT [ "python", "/app/exporter.py" ] - accept parameters passing to the script
+        CMD [ "python", "/app/exporter.py" ] - the command to run exactly
