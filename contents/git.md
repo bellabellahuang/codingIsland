@@ -59,38 +59,17 @@
 
         git remote add upstream [the_project_url_you_fork_from]
 
-* Creating annotated tags
-
-        git tag -a [tag] -m "description"
-
-* Listing tags
+* Using tag
 
         git tag
-
-* Listing details of a tag
-
         git show [tag]
-
-* Sharing tags
-
-        git push origin [tag]
-        git push origin --tags (push all tags)
-
-* Creating tags to upstream
-
-        create a pr to merge other branches into master in upstream
-        in local origin repo
-        git checkout master
-        git pull upstream master
         git tag -a [tag]
-        git push upstream --tags
-
-* Deleting tags
-
-        git tag -d [tag] (locally)
-        git push origin :refs/tags/[tag] (remotely)
-        git push --delete origin [tag] (remotely)
-        git push --delete upstream [tag] (upstream)
+        git tag -a [tag] -m "description"
+        git push origin/upstream [tag]
+        git push origin/upstream --tags
+        git tag -d [tag]
+        git push origin :refs/tags/[tag]
+        git push --delete origin/upstream [tag]
 
 * Fixing merge conflicts in different branches         
 
