@@ -61,7 +61,7 @@
 
 * Creating annotated tags
 
-        git tag -a v1.4 -m "my version 1.4"
+        git tag -a [tag] -m "description"
 
 * Listing tags
 
@@ -69,11 +69,11 @@
 
 * Listing details of a tag
 
-        git show [tag name]
+        git show [tag]
 
 * Sharing tags
 
-        git push origin v1.4
+        git push origin [tag]
         git push origin --tags (push all tags)
 
 * Creating tags to upstream
@@ -82,15 +82,15 @@
         in local origin repo
         git checkout master
         git pull upstream master
-        git tag -a 1.0.0
+        git tag -a [tag]
         git push upstream --tags
 
 * Deleting tags
 
-        git tag -d v1.4 (locally)
-        git push origin :refs/tags/v1.4 (remotely)
-        git push --delete origin 2.0.1 (remotely)
-        git push --delete upstream 2.0.1 (upstream)
+        git tag -d [tag] (locally)
+        git push origin :refs/tags/[tag] (remotely)
+        git push --delete origin [tag] (remotely)
+        git push --delete upstream [tag] (upstream)
 
 * Fixing merge conflicts in different branches         
 
