@@ -1,25 +1,24 @@
 ### GIT commands
 
-* Config particular user for the repo
-
-        git config user.name <your_user_name>
-        git config user.email <your_email_address>
-
 * Clone the remote repo to local
 
-        git clone git@github.com:username/repo.git
+        git clone [repo url]
 
-* Undo local changes
+* Config user
 
-        git checkout .
+        git config user.name [name]
+        git config user.email [email]
 
-* Undo the recent commit
+* Config origin and upstream
 
-        git reset HEAD~
+        git remote add origin [origin url]
+        git remote add upstream [upstream url]
 
-* Undo git add .       
+* Undo
 
-        git reset
+        git checkout . (undo local changes)
+        git reset HEAD~ (undo recent commit)
+        git reset (undo git add .)
 
 * Work with branches
 
@@ -49,15 +48,7 @@
 
 * Solution for refusing to merge unrelated histories
 
-        git pull origin master --allow-unrelated-histories
-
-* Config the repo origin
-
-        git remote add origin [personal_repo_url]
-
-* Config the repo upstream
-
-        git remote add upstream [the_project_url_you_fork_from]
+        git pull origin master --allow-unrelated-histories   
 
 * Using tag
 
