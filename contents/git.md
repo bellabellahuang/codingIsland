@@ -89,6 +89,7 @@
 
         git tag -d v1.4 (locally)
         git push origin :refs/tags/v1.4 (remotely)
+        git push --delete upstream 2.0.1 (upstream)
 
 * Fixing merge conflicts in different branches         
 
