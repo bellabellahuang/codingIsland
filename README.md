@@ -20,6 +20,7 @@
 * [XML](./scripts/xml-examples.ipynb)
 * [string](./scripts/string-examples.ipynb)
 * [list](./scripts/list-examples.ipynb)
+* [Dictionary Assignment](./scripts/dictionary-assignment.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.ipynb)
 * [Keyword arguments](./scripts/keyword-arguments.ipynb)
