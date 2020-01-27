@@ -12,6 +12,7 @@
 * [Snowflake](./contents/snowflake.md)
 * [Public apis](https://public-apis.xyz)
 * [Docker](./contents/docker.md)
+* [Bash](./contents/bash.md)
 
 ### Scripts
 
