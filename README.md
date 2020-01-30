@@ -40,6 +40,11 @@
 * [Multipage PDF to JPEG Image Conversion in Python](https://mtyurt.net/post/2019/multipage-pdf-to-jpeg-image-in-python.html#)
 * [Understanding CloudFormation Updates: Replacement, Resource Policies, and Stack Policies](https://www.alexdebrie.com/posts/understanding-cloudformation-updates/)
 * [Integrate API Gateway with Kinesis Firehose using CloudFormation](https://apimeister.com/2017/08/24/integrate-api-gateway-with-kinesis-firehose-using-cloudformation.html)
+* [Time Complexity in Python](https://wiki.python.org/moin/TimeComplexity)
+* [Coding a better world](https://themobilecompany.com/blog/coding-a-better-world-with-uncle-bob-2019/)
+* [Curlys Law Do One Things](https://blog.codinghorror.com/curlys-law-do-one-thing/)
+* [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
+* [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
 
 ### Study Resources
 * OAuth        
