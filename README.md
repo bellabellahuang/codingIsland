@@ -66,4 +66,7 @@
 * [JWT.to](https://jwt.io) 
 * [Data Commons](http://datacommons.org)
 
+### Interesting Resources
+* [A webcomic of romance, sarcasm, math, and language.](https://xkcd.com/1987/)
+
 
