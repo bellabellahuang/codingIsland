@@ -12,6 +12,9 @@
 * [Snowflake](./contents/snowflake.md)
 * [Public apis](https://public-apis.xyz)
 * [Docker](./contents/docker.md)
+* [Bash](./contents/bash.md)
+* [Python](./contents/python.md)
+* [Jenkins](./contents/jenkins.md)
 * [Airflow](./contents/airflow.md)
 
 ### Scripts
@@ -38,6 +41,11 @@
 * [Multipage PDF to JPEG Image Conversion in Python](https://mtyurt.net/post/2019/multipage-pdf-to-jpeg-image-in-python.html#)
 * [Understanding CloudFormation Updates: Replacement, Resource Policies, and Stack Policies](https://www.alexdebrie.com/posts/understanding-cloudformation-updates/)
 * [Integrate API Gateway with Kinesis Firehose using CloudFormation](https://apimeister.com/2017/08/24/integrate-api-gateway-with-kinesis-firehose-using-cloudformation.html)
+* [Time Complexity in Python](https://wiki.python.org/moin/TimeComplexity)
+* [Coding a better world](https://themobilecompany.com/blog/coding-a-better-world-with-uncle-bob-2019/)
+* [Curlys Law Do One Things](https://blog.codinghorror.com/curlys-law-do-one-thing/)
+* [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
+* [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
 
 ### Study Resources
 * OAuth        
@@ -52,10 +60,15 @@
 * [Data Warehose](https://www.datawarehouse4u.info)
 * [M. Tarik Yurt](https://mtyurt.net)
 * [apimeister blog](https://apimeister.com)
+* [High Scalability](http://highscalability.com)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
 * [rot13 encoding](https://stackoverflow.com/questions/5855758/what-is-the-source-code-of-the-this-module-doing?__s=obmqcfzzswehjvvd6upc)
 * [JWT.to](https://jwt.io) 
+* [Data Commons](http://datacommons.org)
+
+### Interesting Resources
+* [A webcomic of romance, sarcasm, math, and language.](https://xkcd.com/1987/)
 
 
