@@ -18,6 +18,10 @@
 
         aws s3 ls s3://{path} --recursive --human-readable
 
+* Count the number of objects under a path in s3
+
+        aws s3 ls --recursive s3://{path}/ | wc -l
+
 * Add a parameter to SSM
 
         aws ssm put-parameter --name "parameter_name" --value "parameter value" --type String/SecureString

@@ -15,6 +15,7 @@
 * [Bash](./contents/bash.md)
 * [Python](./contents/python.md)
 * [Jenkins](./contents/jenkins.md)
+* [Airflow](./contents/airflow.md)
 
 ### Scripts
 
@@ -59,11 +60,15 @@
 * [Data Warehose](https://www.datawarehouse4u.info)
 * [M. Tarik Yurt](https://mtyurt.net)
 * [apimeister blog](https://apimeister.com)
+* [High Scalability](http://highscalability.com)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
 * [rot13 encoding](https://stackoverflow.com/questions/5855758/what-is-the-source-code-of-the-this-module-doing?__s=obmqcfzzswehjvvd6upc)
 * [JWT.to](https://jwt.io) 
 * [Data Commons](http://datacommons.org)
+
+### Interesting Resources
+* [A webcomic of romance, sarcasm, math, and language.](https://xkcd.com/1987/)
 
 

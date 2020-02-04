@@ -1,5 +1,9 @@
 ### DOCKER commands
 
+* [docker run reference](https://docs.docker.com/engine/reference/run/)
+
+* [docker build reference](https://docs.docker.com/engine/reference/builder/)
+
 * Build docker image
 
         Go to the directory of the Dockerfile
