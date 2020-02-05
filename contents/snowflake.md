@@ -12,7 +12,20 @@
 
 ### Login      
 
-        Snowsql     
+        snowsql
+        snowsql -c [template name in config file]  
+
+### Run query directly
+
+        snowsql -q "SELECT 100;"
+
+### Run sql file
+
+        snowsql -f query.sql
+
+### Execution only
+
+        -o execution_only=True
 
 ### SQL Scripts           
 
