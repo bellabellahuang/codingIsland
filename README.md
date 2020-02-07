@@ -47,6 +47,7 @@
 * [Curlys Law Do One Things](https://blog.codinghorror.com/curlys-law-do-one-thing/)
 * [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
 * [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
+* [How the heck does async/await work in Python 3.5](https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/)
 
 ### Study Resources
 * OAuth        
