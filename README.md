@@ -48,6 +48,7 @@
 * [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
 * [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
 * [How the heck does async/await work in Python 3.5](https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/)
+* [Building Good Tests](https://salmonmode.github.io/2019/03/29/building-good-tests.html)
 
 ### Study Resources
 * OAuth        
