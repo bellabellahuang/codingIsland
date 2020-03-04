@@ -73,6 +73,10 @@
 
         docker pull [image-name]
 
+* Remove existed container
+
+        docker rm $(docker ps -a -q -f status=exited)
+
 * Install mysql-client on Debian
 
         In the Dockerfile
