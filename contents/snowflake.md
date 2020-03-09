@@ -33,6 +33,7 @@
 * [MERGE TABLES](../scripts/snowflake/merge.sql)
 * [IFF & CASE](../scripts/snowflake/iff_case.sql)
 * [DATETIME](../scripts/snowflake/datetime.sql)
+* [ALTER TABLE](../scripts/snowflake/alter_table.sql)
 
 ### Python connector        
 
