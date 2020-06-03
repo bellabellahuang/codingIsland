@@ -15,6 +15,7 @@
 * [Bash](./contents/bash.md)
 * [Python](./contents/python.md)
 * [Jenkins](./contents/jenkins.md)
+* [Airflow](./contents/airflow.md)
 
 ### Scripts
 
@@ -23,6 +24,7 @@
 * [XML](./scripts/xml-examples.ipynb)
 * [string](./scripts/string-examples.ipynb)
 * [list](./scripts/list-examples.ipynb)
+* [classmethod and staticmethod](./scripts/classmethod-staticmethod.py)
 * [Dictionary Assignment](./scripts/dictionary-assignment.ipynb)
 * [Conditional Expression](./scripts/conditional-expression.py)
 * [Calling functions in dictionary](./scripts/functions-in-dictionary.ipynb)
@@ -45,6 +47,8 @@
 * [Curlys Law Do One Things](https://blog.codinghorror.com/curlys-law-do-one-thing/)
 * [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
 * [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
+* [How the heck does async/await work in Python 3.5](https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/)
+* [Building Good Tests](https://salmonmode.github.io/2019/03/29/building-good-tests.html)
 * [Data Engineering 101 for Dummies like Me](https://towardsdatascience.com/data-engineering-101-for-dummies-like-me-cf6b9e89c2b4)
 
 ### Study Resources
@@ -67,6 +71,7 @@
 * [rot13 encoding](https://stackoverflow.com/questions/5855758/what-is-the-source-code-of-the-this-module-doing?__s=obmqcfzzswehjvvd6upc)
 * [JWT.to](https://jwt.io) 
 * [Data Commons](http://datacommons.org)
+* [Elastic Search](https://www.elastic.co/start?ultron=[EL]-[B]-[AMER]-US+CA-Exact&blade=adwords-s&Device=c&thor=elasticsearch&gclid=EAIaIQobChMIpNvE_ZOO6AIVxB6tBh3HhAeHEAAYASAAEgKCsfD_BwE)
 
 ### Interesting Resources
 * [A webcomic of romance, sarcasm, math, and language.](https://xkcd.com/1987/)
