@@ -45,6 +45,7 @@
 * [Curlys Law Do One Things](https://blog.codinghorror.com/curlys-law-do-one-thing/)
 * [Understanding Sql Query Parsing](https://www.red-gate.com/simple-talk/sql/oracle/understanding-sql-query-parsing-part-1/)
 * [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
+* [Data Engineering 101 for Dummies like Me](https://towardsdatascience.com/data-engineering-101-for-dummies-like-me-cf6b9e89c2b4)
 
 ### Study Resources
 * OAuth        
