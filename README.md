@@ -65,6 +65,7 @@
 * [M. Tarik Yurt](https://mtyurt.net)
 * [apimeister blog](https://apimeister.com)
 * [High Scalability](http://highscalability.com)
+* [Shell Tips](https://www.shell-tips.com)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
