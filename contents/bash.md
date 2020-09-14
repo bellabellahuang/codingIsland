@@ -8,3 +8,7 @@
 * updates file permissions
 
         chmod 0600 file
+
+* output the first line of a file
+
+        head -1 file
