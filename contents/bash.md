@@ -12,3 +12,7 @@
 * output the first line of a file
 
         head -1 file
+
+* search keywords in the output
+
+        aws s3 ls s3://bucket-name//path//.. | grep keyword_1 | grep keyword_2
