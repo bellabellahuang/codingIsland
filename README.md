@@ -58,8 +58,7 @@
     * [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
     * [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)  
 * Unicode and character sets
-
-    [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)    
+    * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)    
 
 ### Blogs & Websites
 * [Siv Scripts](https://alysivji.github.io)
@@ -76,6 +75,7 @@
 * [JWT.to](https://jwt.io) 
 * [Data Commons](http://datacommons.org)
 * [Elastic Search](https://www.elastic.co/start?ultron=[EL]-[B]-[AMER]-US+CA-Exact&blade=adwords-s&Device=c&thor=elasticsearch&gclid=EAIaIQobChMIpNvE_ZOO6AIVxB6tBh3HhAeHEAAYASAAEgKCsfD_BwE)
+* [DRY - Dont Repeat Yourself](http://wiki.c2.com/?DontRepeatYourself)
 
 ### Interesting Resources
 * [A webcomic of romance, sarcasm, math, and language.](https://xkcd.com/1987/)
