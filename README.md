@@ -68,6 +68,8 @@
 * [High Scalability](http://highscalability.com)
 * [Shell Tips](https://www.shell-tips.com)
 * [Ben Morris](https://www.ben-morris.com)
+* [Data Guy](https://www.confessionsofadataguy.com/top-10-data-engineering-blogs/)
+* [Data Engineering Weekly](https://www.dataengineeringweekly.com/)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
