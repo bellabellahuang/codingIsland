@@ -52,6 +52,7 @@
 * [How the heck does async/await work in Python 3.5](https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/)
 * [Building Good Tests](https://salmonmode.github.io/2019/03/29/building-good-tests.html)
 * [Data Engineering 101 for Dummies like Me](https://towardsdatascience.com/data-engineering-101-for-dummies-like-me-cf6b9e89c2b4)
+* [Data Quality Management of Data Warehouses Based on MaxCompute](https://alibaba-cloud.medium.com/data-quality-management-of-data-warehouses-based-on-maxcompute-2ca15c698bee)
 
 ### Study Resources
 * OAuth        
