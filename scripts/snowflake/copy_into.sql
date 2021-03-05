@@ -24,4 +24,5 @@ COPY INTO @{stage}/{file_path}/{file_name}.csv.gz
     )
     SINGLE = TRUE
     HEADER = TRUE
+    OVERWRITE = TRUE
     MAX_FILE_SIZE = 5368709120;
