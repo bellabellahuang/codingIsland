@@ -1,6 +1,7 @@
 import sys
 import argparse
 import re
+import csv
 
 
 DATE_REGEX = re.compile('^\d{4}\/\d{2}\/\d{2}$')
@@ -24,6 +25,12 @@ class Main:
 
   def run(self):
     print('do something here')
+
+  def csvReader(self):
+    with open('videos.csv') as file:
+      reader = csv.reader(file)
+      videos = [row[0] for row in reader]
+      print(f'Found videos: {videos}')
 
 if __name__ == '__main__':
   try:
