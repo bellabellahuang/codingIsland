@@ -61,6 +61,7 @@
         git tag -d [tag]
         git push origin :refs/tags/[tag]
         git push --delete origin/upstream [tag]
+        git push upstream :[tag] // remove old tag
 
 * Fixing merge conflicts in different branches         
 
