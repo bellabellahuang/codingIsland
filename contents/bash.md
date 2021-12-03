@@ -13,6 +13,10 @@
 
         head -1 file
 
+* output the number of files in a directory
+
+        ls -1 | wc -l
+
 * search keywords in the output
 
         aws s3 ls s3://bucket-name//path//.. | grep keyword_1 | grep keyword_2
