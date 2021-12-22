@@ -53,6 +53,7 @@
 * [Building Good Tests](https://salmonmode.github.io/2019/03/29/building-good-tests.html)
 * [Data Engineering 101 for Dummies like Me](https://towardsdatascience.com/data-engineering-101-for-dummies-like-me-cf6b9e89c2b4)
 * [Data Quality Management of Data Warehouses Based on MaxCompute](https://alibaba-cloud.medium.com/data-quality-management-of-data-warehouses-based-on-maxcompute-2ca15c698bee)
+* [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
 
 ### Study Resources
 * OAuth        
@@ -71,6 +72,7 @@
 * [Ben Morris](https://www.ben-morris.com)
 * [Data Guy](https://www.confessionsofadataguy.com/top-10-data-engineering-blogs/)
 * [Data Engineering Weekly](https://www.dataengineeringweekly.com/)
+* [JOEL ON SOFTWARE](https://www.joelonsoftware.com/)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
