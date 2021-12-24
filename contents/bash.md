@@ -20,3 +20,7 @@
 * search keywords in the output
 
         aws s3 ls s3://bucket-name//path//.. | grep keyword_1 | grep keyword_2
+
+* get last day of the month
+
+        date -d '2021-10-01 + 1 months - 1 days' +%Y%m%d
