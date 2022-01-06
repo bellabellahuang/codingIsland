@@ -1,5 +1,7 @@
 import boto3
 import os
+import gzip
+from io import BytesIO
 
 
 class S3Service:
@@ -26,6 +28,13 @@ class S3Service:
         except Exception:
             return False
 
+    def get_object_content(self, bucket: str, key: str) -> str:
+        return self.get_object(bucket, key)['Body'].read().decode('utf-8')
+
+    def get_gzip_file_content(self, bucket: str, key: str) -> str:
+        response = self.get_object(bucket, key)['Body'].read() # bytes
+        return gzip.GzipFile(fileobj=BytesIO(response)).read().decode('utf-8')
+
     def head_object(self, bucket: str, key: str):
         try:
             self.service.head_object(Bucket=bucket, Key=key)
@@ -41,3 +50,16 @@ class S3Service:
 
     def download(self, bucket: str, key: str, file: str):
         self.service.download_file(bucket, key, file)
+
+    def save_file(self, file_name: str, content: str):
+        self.service.put_object(
+            Bucket=self.bucket,
+            Key=file_name,
+            Body=self.gzip_content(content))
+
+    def gzip_content(self, content):
+        file_obj = BytesIO()
+        if isinstance(content, str):
+            content = content.encode('utf-8')
+        gzip.GzipFile(fileobj=file_obj, mode='wb').write(content)
+        return file_obj.getvalue()
