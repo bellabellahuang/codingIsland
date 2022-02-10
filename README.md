@@ -54,6 +54,7 @@
 * [Data Engineering 101 for Dummies like Me](https://towardsdatascience.com/data-engineering-101-for-dummies-like-me-cf6b9e89c2b4)
 * [Data Quality Management of Data Warehouses Based on MaxCompute](https://alibaba-cloud.medium.com/data-quality-management-of-data-warehouses-based-on-maxcompute-2ca15c698bee)
 * [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
+* [SQL Order of Operations](https://learnsql.com/blog/sql-order-of-operations/#:~:text=Six%20Operations%20to%20Order%3A%20SELECT,developer%20to%20know%20this%20order.)
 
 ### Study Resources
 * OAuth        
