@@ -55,6 +55,7 @@
 * [Data Quality Management of Data Warehouses Based on MaxCompute](https://alibaba-cloud.medium.com/data-quality-management-of-data-warehouses-based-on-maxcompute-2ca15c698bee)
 * [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
 * [SQL Order of Operations](https://learnsql.com/blog/sql-order-of-operations/#:~:text=Six%20Operations%20to%20Order%3A%20SELECT,developer%20to%20know%20this%20order.)
+* [Building Analytics at 500px](https://medium.com/@samson_hu/building-analytics-at-500px-92e9a7005c83)
 
 ### Study Resources
 * OAuth        
@@ -74,6 +75,7 @@
 * [Data Guy](https://www.confessionsofadataguy.com/top-10-data-engineering-blogs/)
 * [Data Engineering Weekly](https://www.dataengineeringweekly.com/)
 * [JOEL ON SOFTWARE](https://www.joelonsoftware.com/)
+* [Preethi Kasireddy](https://www.preethikasireddy.com/)
 
 ### Other References
 * [Youtube](./contents/youtube.md)    
