@@ -1,0 +1,51 @@
+#!groovy
+
+pipeline {
+  agent any
+  environment {
+    STRING_VAR = "abc"
+    CREDS_VAR = credentials('API_PASSWORD')
+    SUCCESS = ""
+    FAILURE = ""
+  }
+  stages {
+    stage('Trigger') {
+      steps {
+        script {
+          command = 'curl -X POST -k -u ${API_USER}:$CREDS_VAR http://${STRING_VAR}'
+          stdout = sh (
+            script: command,
+            returnStdout: true
+          ).trim()
+          echo "${stdout}"
+          stdoutJSON = readJSON text: stdout
+          if (stdoutJSON['success'] != true) {
+            FAILURE = stdoutJSON['msg']
+            currentBuild.result = "FAILURE"
+            throw new Exception(stdoutJSON['msg'])
+          } else {
+            SUCCESS = stdoutJSON['msg']
+          }
+        }
+      }
+    }
+  }
+  post {
+    success {
+       node('built-in') {
+           slackNotifyStatus (
+               message: "${SUCCESS}",
+               channel: '#slack-channel'
+           )
+       }
+    }
+    failure {
+       node('built-in') {
+           slackNotifyStatus (
+               message: env.ERROR ?: "${FAILURE}",
+               channel: '#slack-channel'
+           )
+       }
+    }
+  }
+}
