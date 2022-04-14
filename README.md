@@ -62,7 +62,9 @@
     * [Digital Ocean - An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)        
     * [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/)  
 * Unicode and character sets
-    * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)    
+    * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+* system-design-primer(https://github.com/donnemartin/system-design-primer#study-guide)
+* snowflake certification(https://servian.dev/snowflakes-snowpro-certification-exam-preparation-guide-how-to-pass-in-3-days-5e5baa484c68)
 
 ### Blogs & Websites
 * [Siv Scripts](https://alysivji.github.io)
