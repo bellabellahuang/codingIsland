@@ -32,6 +32,12 @@ class Main:
       videos = [row[0] for row in reader]
       print(f'Found videos: {videos}')
 
+  def csvWriter(self):
+    with open('some_file.csv', mode='w') as some_file:
+      file_writer = csv.writer(some_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+      file_writer.writerow(['John Smith', 'Accounting', 'November'])
+
 if __name__ == '__main__':
   try:
     Main()
