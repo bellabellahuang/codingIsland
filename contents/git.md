@@ -20,6 +20,11 @@
         git reset HEAD~ (undo recent commit)
         git reset (undo git add .)
 
+* Ignoring a previously committed file
+
+        echo file_name >> .gitignore
+        git rm --cached file_name
+
 * Work with branches
 
         git branch
