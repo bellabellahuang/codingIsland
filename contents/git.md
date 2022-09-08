@@ -20,6 +20,12 @@
         git reset HEAD~ (undo recent commit)
         git reset (undo git add .)
 
+* delete a branch
+
+        git branch -d <branch>
+        git branch -D <branch> (force delete)
+        git push origin :branch
+
 * Ignoring a previously committed file
 
         echo file_name >> .gitignore
