@@ -13,6 +13,8 @@ def run(query):
     try:
         cs.execute(query)
         results = cs.fetchall()
+        for row in results:
+            print(row[0])
     finally:
         cs.close()
 
