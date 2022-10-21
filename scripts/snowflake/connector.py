@@ -9,6 +9,7 @@ def run(query):
         account='account'
     )
     # run the query
+    # https://docs.snowflake.com/en/user-guide/python-connector-example.html#binding-data
     cs = connector.cursor()
     try:
         cs.execute(query)
