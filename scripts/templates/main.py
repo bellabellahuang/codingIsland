@@ -2,6 +2,7 @@ import sys
 import argparse
 import re
 import csv
+import json
 
 
 DATE_REGEX = re.compile('^\d{4}\/\d{2}\/\d{2}$')
@@ -35,8 +36,15 @@ class Main:
   def csvWriter(self):
     with open('some_file.csv', mode='w') as some_file:
       file_writer = csv.writer(some_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
       file_writer.writerow(['John Smith', 'Accounting', 'November'])
+
+  def jsonReader(self):
+    with open('config.json', 'r') as file:
+      json.load(file)
+
+  def error(message):
+    print("ERROR: " + message, file=sys.stderr)
+    sys.exit(1)
 
 if __name__ == '__main__':
   try:
