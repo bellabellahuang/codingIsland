@@ -7,6 +7,7 @@ COPY INTO {table_name}
       FIELD_OPTIONALLY_ENCLOSED_BY = '"'
       ESCAPE_UNENCLOSED_FIELD = NONE
       ENCODING = UTF8
+      SKIP_HEADER = 1
     )
     PURGE = TRUE; # delete the files in external stage after import
 
