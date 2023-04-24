@@ -6,6 +6,7 @@ import json
 
 
 DATE_REGEX = re.compile('^\d{4}\/\d{2}\/\d{2}$')
+# CHANNEL_REGEX = re.compile('^UC[\w-]+')
 
 def get_args():
   parser = argparse.ArgumentParser()
